@@ -1,1 +1,36 @@
-/*  your css code here. If applicable */
+body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .toggle-container {
+            display: flex;
+            gap: 20px;
+        }
+        .g1, .g2, .g3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toggle {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+        .toggle:checked {
+            background-color: #4caf50;
+        }
+        span {
+            font-size: 16px;
+        }
+    
