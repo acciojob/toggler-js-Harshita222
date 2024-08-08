@@ -8,7 +8,7 @@
         //     });
         // });
 
-let checked = []; // this array will keep track of the checked checkboxes
+let checked = []; 
 
 const checkboxes = document.querySelectorAll('.toggle');
 
