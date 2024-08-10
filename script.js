@@ -1,16 +1,37 @@
+        // const toggles = document.querySelectorAll('.toggle');
+        // toggles.forEach(toggle => {
+        //     toggle.addEventListener('change', () => {
+        //         const checkedToggles = document.querySelectorAll('.toggle:checked');
+        //         if (checkedToggles.length > 2) {
+        //             checkedToggles[0].checked = false;
+        //         }
+        //     });
+        // });
 
-checkbox.addEventListener('click', function() {
-    console.log(`Clicked on checkbox: ${checkbox.id}`);
-    if (checkbox.checked) {
-        checked.push(checkbox); // add the checkbox to the list
-        console.log(`Added checkbox to checked list: ${checkbox.id}`);
-    } else {
-        // if the checkbox is unchecked, remove it from the list
-        const index = checked.indexOf(checkbox);
-        if (index > -1) {
-            checked.splice(index, 1);
-            console.log(`Removed checkbox from checked list: ${checkbox.id}`);
+let checked = []; 
+
+const checkboxes = document.querySelectorAll('.toggle');
+
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', function() {
+        if (checkbox.checked) {
+            checked.push(checkbox); // add the checkbox to the list
+            if (checked.length > 2) {
+				let demo1 = checked[checked.length-1];
+				checked.pop();
+					let demo2 = checked[checked.length-1];
+				checked.pop();
+			
+                demo2.checked = false; // uncheck the first checkbox
+                checked.push(demo1)
+				// checked.shift(); // remove the first checkbox from the list
+            }
+        } else {
+            // if the checkbox is unchecked, remove it from the list
+            const index = checked.indexOf(checkbox);
+            if (index > -1) {
+                checked.splice(index, 1);
+            }
         }
-    }
-    console.log(`Current checked list: ${checked.map(c => c.id).join(', ')}`);
+    });
 });
